@@ -50,8 +50,8 @@ void segiBeraturan(float r, int segi, float sudutAwal) {
     float x2 = cos(sudut2) * r;
     float y1 = sin(sudut1) * r;
     float y2 = sin(sudut2) * r;
-    glVertex3f(x1, y1, -10.0);
-    glVertex3f(x2, y2, -10.0);
+    glVertex3f(x1, y1, 0.0);
+    glVertex3f(x2, y2, 0.0);
   }
   glEnd();
 }
@@ -62,19 +62,21 @@ void display()
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   glMatrixMode(GL_MODELVIEW);
   glLoadIdentity();
+   
+  glTranslatef(0.0, -0.5,-10.0);
+  glRotatef(sudut, 0,1,0);
+ 
   glColor3f(0,0,0);
 
-  //glTranslatef(0.0, 0.0, -8.0);
-  // glRotatef(sudut, 0,1,0);
   segiBeraturan(3, 2, 180); // Persegi
  
-  glTranslatef(3.0, 3.0, -10.0);
-  segiBeraturan(4.23, 36, 315) ; // Lingkaran
+  glTranslatef(1.5, 1.5, 0.0);
+  segiBeraturan(2.12, 36, 315) ; // Lingkaran
   
-  glTranslatef(-6.0, 0.0, 0.0);
-  segiBeraturan(4.23, 36, 45) ; // Lingkaran
+  glTranslatef(-3.0, 0.0, 0.0);
+  segiBeraturan(2.12, 36, 45) ; // Lingkaran
 
-  // sudut++;
+  sudut++;
 
   glFlush();
   glutSwapBuffers();
