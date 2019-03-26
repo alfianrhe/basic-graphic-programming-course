@@ -55,7 +55,13 @@ void segiBeraturan(float r, int segi, float sudutAwal) {
   }
   glEnd();
 }
-
+void gambarHati(){
+  //segiBeraturan(3, 2, 180); // Persegi
+  glTranslatef(1.5, 1.5, 0.0);
+  segiBeraturan(2.12, 36, 315) ; // Lingkaran
+  glTranslatef(-3.0, 0.0, 0.0);
+  segiBeraturan(2.12, 36, 45) ; // Lingkaran
+}
 float sudut = 0;
 void display()
 {
@@ -63,20 +69,30 @@ void display()
   glMatrixMode(GL_MODELVIEW);
   glLoadIdentity();
    
-  glTranslatef(0.0, -0.5,-10.0);
-  glRotatef(sudut, 0,1,0);
+  glTranslatef(0.0, -0.0,-25.0);
+  //glRotatef(sudut, 0,1,0);
  
   glColor3f(0,0,0);
+  glRotatef(45,0,0,1);
+  gambarHati();
+  glRotatef(-45,0,0,1); 
 
-  segiBeraturan(3, 2, 180); // Persegi
+  glTranslatef(2.1,-4.215,0); 
+  glRotatef(135,0,0,1);
+  gambarHati();
+  glRotatef(-135,0,0,1); 
  
-  glTranslatef(1.5, 1.5, 0.0);
-  segiBeraturan(2.12, 36, 315) ; // Lingkaran
+  glTranslatef(4.215,2.1,0.0); 
+  glRotatef(225,0,0,1);
+  gambarHati();
+  glRotatef(-225,0,0,1);
   
-  glTranslatef(-3.0, 0.0, 0.0);
-  segiBeraturan(2.12, 36, 45) ; // Lingkaran
-
-  sudut++;
+  glTranslatef(-2.1,4.215,0.0);
+  glRotatef(315,0,0,1);
+  gambarHati(); 
+  glRotatef(-315,0,0,1);
+  
+  //sudut++;
 
   glFlush();
   glutSwapBuffers();
