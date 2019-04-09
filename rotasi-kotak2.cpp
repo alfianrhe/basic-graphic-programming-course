@@ -55,6 +55,7 @@ void segiBeraturan(float r, int segi, float sudutAwal) {
   }
   glEnd();
 }
+
 void gambarHati(){
   //segiBeraturan(3, 2, 180); // Persegi
   glTranslatef(1.5, 1.5, 0.0);
