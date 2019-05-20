@@ -82,21 +82,21 @@ void display()
   glLoadIdentity();
    
   glTranslatef(0.0, 0.0,-8.0);
-  glRotatef(sudut, 0,0,-1);
+  // glRotatef(sudut, 0,0,1);
 
   glPushMatrix();
   glColor3f(1,0,0);
   glTranslatef(2,0,0);
-  glRotatef(sudut,0,0,-1);
-  segiEmpat();
-  glPopMatrix();
-
-  glPushMatrix();
-  glColor3f(0,0,1);
-  glTranslatef(-2,0,0);
   glRotatef(sudut,0,0,1);
   segiEmpat();
   glPopMatrix();
+
+  // glPushMatrix();
+  // glColor3f(0,0,1);
+  // glTranslatef(-2,0,0);
+  // glRotatef(sudut,0,0,-1);
+  // segiEmpat();
+  // glPopMatrix();
 
   sudut++;
 
